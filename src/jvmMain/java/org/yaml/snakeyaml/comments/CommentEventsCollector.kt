@@ -42,11 +42,11 @@ class CommentEventsCollector {
                 throw UnsupportedOperationException()
             }
 
-            override fun poll(): Event {
+            override fun poll(): Event? {
                 return parser.event
             }
 
-            override fun peek(): Event {
+            override fun peek(): Event? {
                 return parser.peekEvent()
             }
 

@@ -74,6 +74,7 @@ abstract class CollectionNode<T>(tag: Tag?, startMark: Mark?, endMark: Mark?, fl
 
     override var endMark: Mark?
         get() = super.endMark
+        public
         set(endMark) {
             this.endMark = endMark
         }

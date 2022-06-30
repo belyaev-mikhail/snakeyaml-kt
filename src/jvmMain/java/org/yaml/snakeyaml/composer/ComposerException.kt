@@ -21,7 +21,7 @@ import org.yaml.snakeyaml.error.MarkedYAMLException
 class ComposerException constructor(
     context: String?,
     contextMark: Mark?,
-    problem: String?,
+    problem: String,
     problemMark: Mark?
 ) : MarkedYAMLException(context, contextMark, problem, problemMark) {
     companion object {

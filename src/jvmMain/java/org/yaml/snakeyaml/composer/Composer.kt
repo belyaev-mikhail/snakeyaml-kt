@@ -137,7 +137,7 @@ class Composer @JvmOverloads constructor(
             }
             // Ensure that the stream contains no more documents.
             if (!parser.checkEvent(Event.ID.StreamEnd)) {
-                val event = parser.event
+                val event = parser.event!!
                 val contextMark = document?.startMark
                 throw ComposerException(
                     "expected a single document in the stream",
@@ -193,7 +193,7 @@ class Composer @JvmOverloads constructor(
         return node
     }
 
-    protected fun composeScalarNode(anchor: String?, blockComments: List<CommentLine?>?): Node {
+    protected fun composeScalarNode(anchor: String?, blockComments: List<CommentLine>?): Node {
         val ev = parser.event as ScalarEvent
         val tag = ev.tag
         var resolved = false
@@ -254,7 +254,7 @@ class Composer @JvmOverloads constructor(
             node.inLineComments = inlineCommentsCollector.collectEvents().consume()
         }
         val endEvent = parser.event
-        node.endMark = endEvent.endMark
+        node.endMark = endEvent!!.endMark
         inlineCommentsCollector.collectEvents()
         if (!inlineCommentsCollector.isEmpty) {
             node.inLineComments = inlineCommentsCollector.consume()
@@ -295,7 +295,7 @@ class Composer @JvmOverloads constructor(
         if (startEvent.isFlow) {
             node.inLineComments = inlineCommentsCollector.collectEvents().consume()
         }
-        val endEvent = parser.event
+        val endEvent = parser.event!!
         node.endMark = endEvent.endMark
         inlineCommentsCollector.collectEvents()
         if (!inlineCommentsCollector.isEmpty) {

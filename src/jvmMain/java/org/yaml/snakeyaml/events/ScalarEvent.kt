@@ -33,7 +33,7 @@ class ScalarEvent(
     val tag: String?, // The implicit flag of a scalar event is a pair of boolean values that
     // indicate if the tag may be omitted when the scalar is emitted in a plain
     // and non-plain style correspondingly.
-    private val implicit: ImplicitTuple, value: String?,
+    internal val implicit: ImplicitTuple, value: String?,
     startMark: Mark?, endMark: Mark?, style: DumperOptions.ScalarStyle?
 ) : NodeEvent(anchor, startMark, endMark) {
 

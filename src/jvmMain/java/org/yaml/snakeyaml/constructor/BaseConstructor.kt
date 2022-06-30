@@ -250,7 +250,7 @@ abstract class BaseConstructor @JvmOverloads constructor(loadingConfig: LoaderOp
             val constructor = yamlConstructors[node.tag]
             if (constructor == null) {
                 for (prefix in yamlMultiConstructors.keys) {
-                    if (node.tag.startsWith(prefix)) {
+                    if (node.tag!!.startsWith(prefix)) {
                         return yamlMultiConstructors[prefix]
                     }
                 }

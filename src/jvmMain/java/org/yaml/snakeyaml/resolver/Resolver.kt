@@ -75,7 +75,7 @@ class Resolver {
         }
     }
 
-    fun resolve(kind: NodeId, value: String?, implicit: Boolean): Tag? {
+    fun resolve(kind: NodeId, value: String?, implicit: Boolean): Tag {
         if (kind == NodeId.scalar && implicit) {
             val resolvers: List<ResolverTuple>?
             resolvers = if (value!!.length == 0) {

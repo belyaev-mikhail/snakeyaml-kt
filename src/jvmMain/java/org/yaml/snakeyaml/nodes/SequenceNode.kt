@@ -27,7 +27,7 @@ import org.yaml.snakeyaml.error.Mark
  *
  */
 class SequenceNode(
-    tag: Tag?, resolved: Boolean, value: List<Node?>?, startMark: Mark?, endMark: Mark?,
+    tag: Tag?, resolved: Boolean, value: List<Node>?, startMark: Mark?, endMark: Mark?,
     flowStyle: DumperOptions.FlowStyle?
 ) : CollectionNode<Node?>(tag, startMark, endMark, flowStyle) {
     /**
@@ -35,7 +35,7 @@ class SequenceNode(
      *
      * @return Nodes in the specified order.
      */
-    override val value: List<Node?>
+    override val value: List<Node>
 
     init {
         if (value == null) {
@@ -45,7 +45,7 @@ class SequenceNode(
         this.isResolved = resolved
     }
 
-    constructor(tag: Tag?, value: List<Node?>?, flowStyle: DumperOptions.FlowStyle?) : this(
+    constructor(tag: Tag?, value: List<Node>?, flowStyle: DumperOptions.FlowStyle?) : this(
         tag,
         true,
         value,
@@ -61,7 +61,7 @@ class SequenceNode(
      * @deprecated Since restored in v1.22.  Use {@link SequenceNode#SequenceNode(Tag, List<Node>, org.yaml.snakeyaml.DumperOptions.FlowStyle) }.
      */
     @Deprecated("")
-    constructor(tag: Tag?, value: List<Node?>?, style: Boolean?) : this(tag, value, fromBoolean(style)) {
+    constructor(tag: Tag?, value: List<Node>?, style: Boolean?) : this(tag, value, fromBoolean(style)) {
     }
 
     /*
@@ -71,7 +71,7 @@ class SequenceNode(
      */
     @Deprecated("")
     constructor(
-        tag: Tag?, resolved: Boolean, value: List<Node?>?, startMark: Mark?, endMark: Mark?,
+        tag: Tag?, resolved: Boolean, value: List<Node>?, startMark: Mark?, endMark: Mark?,
         style: Boolean?
     ) : this(tag, resolved, value, startMark, endMark, fromBoolean(style)) {
     }

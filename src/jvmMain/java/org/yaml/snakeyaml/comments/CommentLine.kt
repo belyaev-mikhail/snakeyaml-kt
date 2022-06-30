@@ -22,7 +22,7 @@ import org.yaml.snakeyaml.events.CommentEvent
  * A comment line. May be a block comment, blank line, or inline comment.
  */
 class CommentLine(
-    val startMark: Mark, val endMark: Mark,
+    val startMark: Mark?, val endMark: Mark?,
     /**
      * Value of this comment.
      *
