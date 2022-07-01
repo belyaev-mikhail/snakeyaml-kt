@@ -223,14 +223,14 @@ public class PyStructureTest extends PyImportTest {
             }
             CanonicalParser parser = new CanonicalParser(buffer.toString().replace(System.lineSeparator(), "\n"));
             Composer composer = new Composer(parser, resolver);
-            this.constructor.setComposer(composer);
+            this.getConstructor().setComposer(composer);
             Iterator<Object> result = new Iterator<Object>() {
                 public boolean hasNext() {
-                    return constructor.checkData();
+                    return getConstructor().checkData();
                 }
 
                 public Object next() {
-                    return constructor.getData();
+                    return getConstructor().getData();
                 }
 
                 public void remove() {

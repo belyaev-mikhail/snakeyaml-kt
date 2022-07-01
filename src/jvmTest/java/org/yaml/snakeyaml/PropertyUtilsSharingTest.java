@@ -26,13 +26,13 @@ public class PropertyUtilsSharingTest extends TestCase {
 
     public void testYamlDefaults() {
         Yaml yaml1 = new Yaml();
-        assertSame(yaml1.constructor.getPropertyUtils(), yaml1.representer.getPropertyUtils());
+        assertSame(yaml1.getConstructor().getPropertyUtils(), yaml1.getRepresenter().getPropertyUtils());
 
         Yaml yaml2 = new Yaml(new Constructor());
-        assertSame(yaml2.constructor.getPropertyUtils(), yaml2.representer.getPropertyUtils());
+        assertSame(yaml2.getConstructor().getPropertyUtils(), yaml2.getRepresenter().getPropertyUtils());
 
         Yaml yaml3 = new Yaml(new Representer());
-        assertSame(yaml3.constructor.getPropertyUtils(), yaml3.representer.getPropertyUtils());
+        assertSame(yaml3.getConstructor().getPropertyUtils(), yaml3.getRepresenter().getPropertyUtils());
     }
 
     public void testYamlConstructorWithPropertyUtils() {
@@ -40,8 +40,8 @@ public class PropertyUtilsSharingTest extends TestCase {
         PropertyUtils pu = new PropertyUtils();
         constructor1.setPropertyUtils(pu);
         Yaml yaml = new Yaml(constructor1);
-        assertSame(pu, yaml.constructor.getPropertyUtils());
-        assertSame(pu, yaml.representer.getPropertyUtils());
+        assertSame(pu, yaml.getConstructor().getPropertyUtils());
+        assertSame(pu, yaml.getRepresenter().getPropertyUtils());
     }
 
     public void testYamlRepresenterWithPropertyUtils() {
@@ -49,8 +49,8 @@ public class PropertyUtilsSharingTest extends TestCase {
         PropertyUtils pu = new PropertyUtils();
         representer2.setPropertyUtils(pu);
         Yaml yaml = new Yaml(representer2);
-        assertSame(pu, yaml.constructor.getPropertyUtils());
-        assertSame(pu, yaml.representer.getPropertyUtils());
+        assertSame(pu, yaml.getConstructor().getPropertyUtils());
+        assertSame(pu, yaml.getRepresenter().getPropertyUtils());
     }
 
     @Test
@@ -62,7 +62,7 @@ public class PropertyUtilsSharingTest extends TestCase {
         PropertyUtils pu_r = new PropertyUtils();
         representer.setPropertyUtils(pu_r);
         Yaml yaml = new Yaml(constructor, representer);
-        assertSame(pu_c, yaml.constructor.getPropertyUtils());
-        assertSame(pu_r, yaml.representer.getPropertyUtils());
+        assertSame(pu_c, yaml.getConstructor().getPropertyUtils());
+        assertSame(pu_r, yaml.getRepresenter().getPropertyUtils());
     }
 }

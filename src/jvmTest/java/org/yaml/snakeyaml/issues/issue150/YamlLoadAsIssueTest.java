@@ -24,6 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.junit.Before;
 import org.junit.Test;
 import org.yaml.snakeyaml.Yaml;
@@ -113,7 +115,7 @@ public class YamlLoadAsIssueTest {
                     }
                     if ("wheels".equals(field)) {
                         SequenceNode snode = (SequenceNode) tuple.getValueNode();
-                        List<Wheel> wheels = (List<Wheel>) constructSequence(snode);
+                        List<Wheel> wheels = (List<Wheel>) (List<? extends Object>)constructSequence(snode);
                         car.setWheels(wheels);
                     }
                 }
@@ -123,7 +125,8 @@ public class YamlLoadAsIssueTest {
 
         private class ConstructWheel extends AbstractConstruct {
 
-            public Wheel construct(Node node) {
+            @Nullable
+            public Wheel construct(@NotNull Node node) {
                 Wheel w = null;
                 String strValue = toScalarString(node);
                 if (strValue != null && strValue.length() > 2) {

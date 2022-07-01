@@ -70,14 +70,14 @@ public abstract class PyImportTest extends TestCase {
     }
 
     protected File[] getStreamsByExtension(String extention, boolean onlyIfCanonicalPresent) {
-        File file = new File("src/test/resources/pyyaml");
+        File file = new File("src/jvmTest/resources/pyyaml");
         assertTrue("Folder not found: " + file.getAbsolutePath(), file.exists());
         assertTrue(file.isDirectory());
         return file.listFiles(new PyFilenameFilter(extention, onlyIfCanonicalPresent));
     }
 
     protected File getFileByName(String name) {
-        File file = new File("src/test/resources/pyyaml/" + name);
+        File file = new File("src/jvmTest/resources/pyyaml/" + name);
         assertTrue("Folder not found: " + file.getAbsolutePath(), file.exists());
         assertTrue(file.isFile());
         return file;

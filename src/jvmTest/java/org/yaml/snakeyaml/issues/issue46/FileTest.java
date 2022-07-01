@@ -33,7 +33,7 @@ import org.yaml.snakeyaml.representer.Representer;
 public class FileTest extends TestCase {
     @SuppressWarnings("unchecked")
     public void test() {
-        File file = new File("src/test/resources/examples/list-bean-1.yaml");
+        File file = new File("src/jvmTest/resources/examples/list-bean-1.yaml");
         assertTrue(file.exists());
         Yaml yaml = new Yaml(new MyRepresenter());
         Map<String, File> map = new HashMap<String, File>();

@@ -47,7 +47,8 @@ public class Base64CoderTest extends TestCase {
         checkInvalid("YW\t=");
         checkInvalid("YWE\t");
         //
-        checkInvalid("©WE=");
+        String c = "A©WE=";
+        checkInvalid(c);
         checkInvalid("Y©E=");
         checkInvalid("YW©=");
         checkInvalid("YWE©");

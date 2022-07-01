@@ -67,7 +67,7 @@ public class FilterPropertyToDumpTest extends TestCase {
         bean.setId("ID127");
         Yaml yaml = new Yaml();
         TypeDescription td = new TypeDescription(BeanToRemoveProperty.class);
-        td.setIncludes("number");
+        td.setIncludes(new String[] { "number" });
         yaml.addTypeDescription(td);
         String dump = yaml.dump(bean);
         // System.out.println(dump);

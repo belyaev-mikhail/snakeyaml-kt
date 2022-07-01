@@ -47,7 +47,7 @@ public class LoadExampleTest extends TestCase {
     }
 
     public void testLoadFromStream() throws IOException {
-        InputStream input = new FileInputStream(new File("src/test/resources/reader/utf-8.txt"));
+        InputStream input = new FileInputStream(new File("src/jvmTest/resources/reader/utf-8.txt"));
         Yaml yaml = new Yaml();
         Object data = yaml.load(input);
         assertEquals("test", data);
@@ -59,7 +59,7 @@ public class LoadExampleTest extends TestCase {
 
     public void testLoadManyDocuments() throws IOException {
         InputStream input = new FileInputStream(
-                new File("src/test/resources/specification/example2_28.yaml"));
+                new File("src/jvmTest/resources/specification/example2_28.yaml"));
         Yaml yaml = new Yaml();
         int counter = 0;
         for (Object data : yaml.loadAll(input)) {
@@ -73,7 +73,7 @@ public class LoadExampleTest extends TestCase {
 
     public void testLoadManyDocumentsWithIterator() throws IOException {
         InputStream input = new FileInputStream(
-                new File("src/test/resources/specification/example2_28.yaml"));
+                new File("src/jvmTest/resources/specification/example2_28.yaml"));
         Yaml yaml = new Yaml();
         int counter = 0;
         Iterator<Object> iter = yaml.loadAll(input).iterator();
@@ -89,7 +89,7 @@ public class LoadExampleTest extends TestCase {
 
     public void testLoadManyDocumentsWithIterator2() throws IOException {
         InputStream input = new FileInputStream(
-                new File("src/test/resources/specification/example2_28.yaml"));
+                new File("src/jvmTest/resources/specification/example2_28.yaml"));
         Yaml yaml = new Yaml();
         Iterator<Object> iter = yaml.loadAll(input).iterator();
         Object data = iter.next();

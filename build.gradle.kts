@@ -44,7 +44,16 @@ kotlin {
             }
         }
         val jvmMain by getting
-        val jvmTest by getting
+        val jvmTest by getting {
+            dependencies {
+                implementation("junit:junit:4.13.1")
+                implementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
+                implementation("org.junit.vintage:junit-vintage-engine:5.8.2")
+                implementation("joda-time:joda-time:2.10.1")
+                implementation("org.apache.velocity:velocity:1.6.2")
+                implementation("org.projectlombok:lombok:1.18.22")
+            }
+        }
         val jsMain by getting
         val jsTest by getting
         val nativeMain by getting

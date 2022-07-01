@@ -61,7 +61,7 @@ public class ReaderBomTest extends TestCase {
     }
 
     public void testUtf8Bom() throws IOException {
-        File file = new File("src/test/resources/reader/utf-8.txt");
+        File file = new File("src/jvmTest/resources/reader/utf-8.txt");
         assertTrue("Test file not found: " + file.getAbsolutePath(), file.exists());
         InputStream input = new FileInputStream(file);
         UnicodeReader unicodeReader = new UnicodeReader(input);
@@ -80,7 +80,7 @@ public class ReaderBomTest extends TestCase {
     }
 
     public void testUnicodeLeBom() throws IOException {
-        File file = new File("src/test/resources/reader/unicode-16le.txt");
+        File file = new File("src/jvmTest/resources/reader/unicode-16le.txt");
         assertTrue("Test file not found: " + file.getAbsolutePath(), file.exists());
         InputStream input = new FileInputStream(file);
         UnicodeReader unicodeReader = new UnicodeReader(input);
@@ -99,7 +99,7 @@ public class ReaderBomTest extends TestCase {
     }
 
     public void testUnicodeBeBom() throws IOException {
-        File file = new File("src/test/resources/reader/unicode-16be.txt");
+        File file = new File("src/jvmTest/resources/reader/unicode-16be.txt");
         assertTrue("Test file not found: " + file.getAbsolutePath(), file.exists());
         InputStream input = new FileInputStream(file);
         UnicodeReader unicodeReader = new UnicodeReader(input);

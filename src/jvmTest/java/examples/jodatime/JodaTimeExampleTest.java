@@ -19,6 +19,7 @@ import java.util.Date;
 
 import junit.framework.TestCase;
 
+import org.jetbrains.annotations.Nullable;
 import org.joda.time.DateMidnight;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
@@ -67,6 +68,7 @@ public class JodaTimeExampleTest extends TestCase {
         }
 
         class TimeStampConstruct extends Constructor.ConstructScalar {
+            @Nullable
             @Override
             public Object construct(Node nnode) {
                 if (nnode.getTag().equals("tag:yaml.org,2002:timestamp")) {

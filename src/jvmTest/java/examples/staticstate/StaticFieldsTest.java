@@ -21,6 +21,8 @@ import java.util.Set;
 
 import junit.framework.TestCase;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
@@ -78,8 +80,9 @@ public class StaticFieldsTest extends TestCase {
     }
 
     private class MyRepresenter extends Representer {
+        @Nullable
         @Override
-        protected MappingNode representJavaBean(Set<Property> properties, Object javaBean) {
+        protected MappingNode representJavaBean(@NotNull Set<? extends Property> properties, @NotNull Object javaBean) {
             MappingNode node = super.representJavaBean(properties, javaBean);
             if (javaBean instanceof JavaBeanWithStaticState) {
                 List<NodeTuple> value = node.getValue();
@@ -90,6 +93,7 @@ public class StaticFieldsTest extends TestCase {
             }
             return node;
         }
+
     }
 
     private class MyConstructor extends Constructor {

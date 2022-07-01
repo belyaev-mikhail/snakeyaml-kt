@@ -20,6 +20,8 @@ import java.util.List;
 
 import junit.framework.TestCase;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.AbstractConstruct;
 import org.yaml.snakeyaml.constructor.Constructor;
@@ -73,7 +75,7 @@ public class ParameterizedTypeTest extends TestCase {
 
         private class ConstructClass extends AbstractConstruct {
 
-            public Object construct(Node node) {
+            public Object construct(@NotNull Node node) {
                 String clazz = (String) constructScalar((ScalarNode) node);
                 try {
                     return Class.forName("java.lang." + clazz);

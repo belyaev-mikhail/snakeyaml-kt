@@ -34,8 +34,8 @@ public class CanonicalLoader extends Yaml {
                 ch = yaml.read();
             }
             Composer composer = new Composer(new CanonicalParser(buffer.toString().replace(System.lineSeparator(), "\n")), resolver);
-            constructor.setComposer(composer);
-            return constructor.getSingleData(Object.class);
+            getConstructor().setComposer(composer);
+            return getConstructor().getSingleData(Object.class);
         } catch (IOException e) {
             throw new YAMLException(e);
         }
@@ -50,14 +50,14 @@ public class CanonicalLoader extends Yaml {
                 ch = yaml.read();
             }
             Composer composer = new Composer(new CanonicalParser(buffer.toString()), resolver);
-            this.constructor.setComposer(composer);
+            this.getConstructor().setComposer(composer);
             Iterator<Object> result = new Iterator<Object>() {
                 public boolean hasNext() {
-                    return constructor.checkData();
+                    return getConstructor().checkData();
                 }
 
                 public Object next() {
-                    return constructor.getData();
+                    return getConstructor().getData();
                 }
 
                 public void remove() {

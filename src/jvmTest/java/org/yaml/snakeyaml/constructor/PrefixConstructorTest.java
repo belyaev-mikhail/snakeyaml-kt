@@ -111,7 +111,7 @@ public class PrefixConstructorTest extends TestCase {
 
         @SuppressWarnings("unchecked")
         public Object construct(Node node) {
-            List<String> list = (List<String>) con.constructSequence((SequenceNode) node);
+            List<String> list = (List<String>) ((List<? extends Object>)con.constructSequence((SequenceNode) node));
             return new Extra(list.get(0), list.get(1));
         }
     }

@@ -49,7 +49,7 @@ public class Example2_24Test extends TestCase {
             @SuppressWarnings("unchecked")
             public Object construct(Node node) {
                 SequenceNode snode = (SequenceNode) node;
-                List<Entity> values = (List<Entity>) constructSequence(snode);
+                List<Entity> values = (List<Entity>) (List<? extends Object>)constructSequence(snode);
                 Shape shape = new Shape(values);
                 return shape;
             }
