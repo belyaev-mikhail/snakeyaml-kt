@@ -32,6 +32,10 @@ public class CustomListExampleTest extends TestCase {
     }
 
     class CustomConstructor extends Constructor {
+        CustomConstructor() {
+            super();
+        }
+
         @Override
         protected List<Object> createDefaultList(int initSize) {
             return new LinkedList<Object>();

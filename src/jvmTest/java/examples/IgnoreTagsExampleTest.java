@@ -56,6 +56,7 @@ public class IgnoreTagsExampleTest extends TestCase {
         private Construct original;
 
         public MyConstructor() {
+            super();
             original = this.yamlConstructors.get(null);
             this.yamlConstructors.put(null, new IgnoringConstruct());
         }

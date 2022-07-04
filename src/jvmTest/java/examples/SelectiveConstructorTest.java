@@ -32,6 +32,7 @@ public class SelectiveConstructorTest extends TestCase {
     class SelectiveConstructor extends Constructor {
         public SelectiveConstructor() {
             // define a custom way to create a mapping node
+            super();
             yamlClassConstructors.put(NodeId.mapping, new MyPersistentObjectConstruct());
         }
 

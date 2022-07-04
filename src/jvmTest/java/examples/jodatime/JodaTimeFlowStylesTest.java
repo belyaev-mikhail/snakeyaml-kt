@@ -134,6 +134,7 @@ public class JodaTimeFlowStylesTest extends TestCase {
 
     private class JodaPropertyConstructor extends Constructor {
         public JodaPropertyConstructor() {
+            super();
             yamlClassConstructors.put(NodeId.scalar, new TimeStampConstruct());
         }
 

@@ -42,6 +42,7 @@ public class ImplicitResolverTest extends TestCase {
         protected Map<String, String> config = null;
 
         public ConfigurationConstructor(Map<String, String> config) {
+            super();
             this.config = config;
             this.yamlConstructors.put(CFG, new ConfigObjectConstruct());
         }

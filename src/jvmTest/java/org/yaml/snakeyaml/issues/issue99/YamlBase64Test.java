@@ -115,6 +115,7 @@ public class YamlBase64Test extends TestCase {
 
     private class SpecialContructor extends Constructor {
         public SpecialContructor(Tag tag) {
+            super();
             this.yamlConstructors.put(tag, new MyBinaryConstructor());
         }
 

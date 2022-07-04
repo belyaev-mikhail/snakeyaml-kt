@@ -24,6 +24,7 @@ import java.util.List;
 
 import junit.framework.TestCase;
 
+import org.junit.Ignore;
 import org.yaml.snakeyaml.Util;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
@@ -33,6 +34,7 @@ import org.yaml.snakeyaml.parser.ParserImpl;
 import org.yaml.snakeyaml.reader.StreamReader;
 import org.yaml.snakeyaml.reader.UnicodeReader;
 
+@Ignore
 public abstract class PyImportTest extends TestCase {
     public static final String PATH = "pyyaml";
 

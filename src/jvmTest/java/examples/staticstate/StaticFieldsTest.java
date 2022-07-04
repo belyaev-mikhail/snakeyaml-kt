@@ -100,6 +100,10 @@ public class StaticFieldsTest extends TestCase {
 
         private Tag JBWSS = new Tag(JavaBeanWithStaticState.class);
 
+        private MyConstructor() {
+            super();
+        }
+
         protected Object constructObject(Node node) {
             if (JavaBeanWithStaticState.class.isAssignableFrom(node.getType())
                     || JBWSS.equals(node.getTag())) {

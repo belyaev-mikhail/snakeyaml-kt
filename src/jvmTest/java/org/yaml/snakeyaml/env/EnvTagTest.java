@@ -29,7 +29,7 @@ import static org.yaml.snakeyaml.env.EnvScalarConstructor.ENV_FORMAT;
 public class EnvTagTest extends TestCase {
     public void testImplicitResolverForEnvConstructor() {
         Yaml yaml = new Yaml();
-        yaml.addImplicitResolver(EnvScalarConstructor.ENV_TAG, ENV_FORMAT, "$");
+        yaml.addImplicitResolver(EnvScalarConstructor.ENV_TAG, ENV_FORMAT.toPattern(), "$");
         Node loaded = yaml.compose(new StringReader("${PATH}"));
         assertEquals(EnvScalarConstructor.ENV_TAG, loaded.getTag());
     }

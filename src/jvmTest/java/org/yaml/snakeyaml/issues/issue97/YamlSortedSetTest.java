@@ -108,6 +108,7 @@ public class YamlSortedSetTest {
 
     private class SetContructor extends Constructor {
         public SetContructor() {
+            super();
             yamlClassConstructors.put(NodeId.sequence, new ConstructSetFromSequence());
         }
 

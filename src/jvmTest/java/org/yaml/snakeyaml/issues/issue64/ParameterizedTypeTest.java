@@ -70,12 +70,13 @@ public class ParameterizedTypeTest extends TestCase {
 
     static class ClassConstructor extends Constructor {
         public ClassConstructor() {
+            super();
             this.yamlConstructors.put(new Tag("!clazz"), new ConstructClass());
         }
 
         private class ConstructClass extends AbstractConstruct {
 
-            public Object construct(@NotNull Node node) {
+            public Object construct(@Nullable Node node) {
                 String clazz = (String) constructScalar((ScalarNode) node);
                 try {
                     return Class.forName("java.lang." + clazz);

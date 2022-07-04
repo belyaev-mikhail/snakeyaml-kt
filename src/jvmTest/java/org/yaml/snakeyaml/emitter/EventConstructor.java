@@ -43,6 +43,7 @@ import org.yaml.snakeyaml.nodes.ScalarNode;
 public class EventConstructor extends Constructor {
 
     public EventConstructor() {
+        super();
         this.yamlConstructors.put(null, new ConstructEvent());
     }
 

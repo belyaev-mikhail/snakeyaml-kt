@@ -39,6 +39,7 @@ public class FilterClassesConstructorTest extends TestCase {
         private boolean filter;
 
         public FilterConstructor(boolean f) {
+            super();
             filter = f;
         }
 

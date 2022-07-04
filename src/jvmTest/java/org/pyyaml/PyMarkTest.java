@@ -15,11 +15,13 @@
  */
 package org.pyyaml;
 
+import org.junit.Ignore;
 import org.yaml.snakeyaml.error.Mark;
 
 /**
  * imported from PyYAML
  */
+@Ignore
 public class PyMarkTest extends PyImportTest {
 
     public void testMarks() {

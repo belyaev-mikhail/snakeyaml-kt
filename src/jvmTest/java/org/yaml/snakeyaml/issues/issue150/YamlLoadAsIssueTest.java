@@ -93,6 +93,7 @@ public class YamlLoadAsIssueTest {
 
     private class MyConstructor extends Constructor {
         public MyConstructor() {
+            super();
             yamlConstructors.put(new Tag("!car"), new ConstructCar());
             yamlConstructors.put(new Tag("!wheel"), new ConstructWheel());
         }
@@ -126,7 +127,7 @@ public class YamlLoadAsIssueTest {
         private class ConstructWheel extends AbstractConstruct {
 
             @Nullable
-            public Wheel construct(@NotNull Node node) {
+            public Wheel construct(@Nullable Node node) {
                 Wheel w = null;
                 String strValue = toScalarString(node);
                 if (strValue != null && strValue.length() > 2) {

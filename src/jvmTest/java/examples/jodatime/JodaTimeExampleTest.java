@@ -64,6 +64,7 @@ public class JodaTimeExampleTest extends TestCase {
 
     class JodaPropertyConstructor extends Constructor {
         public JodaPropertyConstructor() {
+            super();
             yamlClassConstructors.put(NodeId.scalar, new TimeStampConstruct());
         }
 
@@ -91,6 +92,7 @@ public class JodaTimeExampleTest extends TestCase {
         private final Construct jodaDateConstruct;
 
         public JodaTimeConstructor() {
+            super();
             javaDateConstruct = new ConstructYamlTimestamp();
             jodaDateConstruct = new ConstructJodaTimestamp();
             // Whenever we see an explicit timestamp tag, make a Joda Date

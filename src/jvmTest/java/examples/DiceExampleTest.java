@@ -66,6 +66,7 @@ public class DiceExampleTest extends TestCase {
 
     class DiceConstructor extends Constructor {
         public DiceConstructor() {
+            super();
             this.yamlConstructors.put(new Tag("!dice"), new ConstructDice());
         }
 

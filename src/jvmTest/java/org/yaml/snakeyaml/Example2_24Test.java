@@ -36,6 +36,7 @@ import org.yaml.snakeyaml.representer.Representer;
 public class Example2_24Test extends TestCase {
     class MyConstructor extends Constructor {
         public MyConstructor() {
+            super();
             this.yamlConstructors.put(new Tag("tag:clarkevans.com,2002:shape"),
                     new ConstructShape());
             this.yamlConstructors.put(new Tag("tag:clarkevans.com,2002:circle"),

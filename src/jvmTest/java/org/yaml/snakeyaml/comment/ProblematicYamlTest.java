@@ -25,8 +25,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.junit.Test;
-import org.yaml.snakeyaml.DumperOptions;
-import org.yaml.snakeyaml.DumperOptions.FlowStyle;
 import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.comments.CommentType;
 import org.yaml.snakeyaml.events.CommentEvent;

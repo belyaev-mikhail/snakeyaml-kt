@@ -24,6 +24,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.emitter.Emitter;
 import org.yaml.snakeyaml.emitter.EventConstructor;
@@ -33,6 +34,7 @@ import org.yaml.snakeyaml.events.Event;
 /**
  * imported from PyYAML
  */
+@Ignore
 public class PyErrorsTest extends PyImportTest {
     private boolean skip(String filename) {
         List<String> failures = new ArrayList<String>();

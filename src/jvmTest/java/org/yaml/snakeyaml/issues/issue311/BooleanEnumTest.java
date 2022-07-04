@@ -91,6 +91,7 @@ public class BooleanEnumTest {
 
     class MyConstructor extends Constructor {
         public MyConstructor() {
+            super();
             this.yamlClassConstructors.put(NodeId.scalar, new ConstructEnum());
         }
 

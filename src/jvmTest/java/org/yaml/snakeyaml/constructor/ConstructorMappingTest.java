@@ -59,6 +59,10 @@ public class ConstructorMappingTest extends TestCase {
     }
 
     class CustomConstructor extends Constructor {
+        CustomConstructor() {
+            super();
+        }
+
         @Override
         protected Map<Object, Object> createDefaultMap(int initSize) {
             return new TreeMap<Object, Object>();

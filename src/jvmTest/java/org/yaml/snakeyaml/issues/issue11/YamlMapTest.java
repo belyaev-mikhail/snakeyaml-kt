@@ -131,6 +131,7 @@ public class YamlMapTest extends TestCase {
 
     public static class ExtendedConstructor extends Constructor {
         public ExtendedConstructor() {
+            super();
             this.yamlConstructors.put(new Tag("!Custom"), new ConstructCustom());
         }
 

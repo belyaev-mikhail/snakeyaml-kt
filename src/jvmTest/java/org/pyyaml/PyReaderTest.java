@@ -20,6 +20,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.junit.Ignore;
 import org.yaml.snakeyaml.error.YAMLException;
 import org.yaml.snakeyaml.reader.ReaderException;
 import org.yaml.snakeyaml.reader.StreamReader;
@@ -28,6 +29,7 @@ import org.yaml.snakeyaml.reader.UnicodeReader;
 /**
  * imported from PyYAML
  */
+@Ignore
 public class PyReaderTest extends PyImportTest {
 
     public void testReaderUnicodeErrors() throws IOException {

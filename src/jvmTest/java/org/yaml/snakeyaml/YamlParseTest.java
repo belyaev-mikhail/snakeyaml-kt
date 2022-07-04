@@ -18,12 +18,10 @@ package org.yaml.snakeyaml;
 import java.io.StringReader;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
 import junit.framework.TestCase;
 
 import org.yaml.snakeyaml.events.*;
-import org.yaml.snakeyaml.nodes.Tag;
 
 public class YamlParseTest extends TestCase {
 

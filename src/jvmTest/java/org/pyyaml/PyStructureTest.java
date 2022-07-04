@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.composer.Composer;
 import org.yaml.snakeyaml.constructor.AbstractConstruct;
@@ -44,6 +45,7 @@ import org.yaml.snakeyaml.resolver.Resolver;
 /**
  * imported from PyYAML
  */
+@Ignore
 public class PyStructureTest extends PyImportTest {
 
     private void compareEvents(List<Event> events1, List<Event> events2, boolean full) {
@@ -257,6 +259,7 @@ public class PyStructureTest extends PyImportTest {
 
     private class MyConstructor extends Constructor {
         public MyConstructor() {
+            super();
             this.yamlConstructors.put(null, new ConstructUndefined());
         }
 

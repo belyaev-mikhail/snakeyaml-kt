@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.emitter.Emitter;
 import org.yaml.snakeyaml.emitter.EventConstructor;
@@ -42,6 +43,7 @@ import org.yaml.snakeyaml.reader.UnicodeReader;
 /**
  * imported from PyYAML
  */
+@Ignore
 public class PyEmitterTest extends PyImportTest {
     public void testEmitterOnData() {
         _testEmitter(".data", false);

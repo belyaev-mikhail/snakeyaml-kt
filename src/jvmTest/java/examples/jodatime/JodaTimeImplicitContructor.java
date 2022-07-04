@@ -28,6 +28,7 @@ import org.yaml.snakeyaml.nodes.Tag;
  */
 public class JodaTimeImplicitContructor extends Constructor {
     public JodaTimeImplicitContructor() {
+        super();
         this.yamlConstructors.put(Tag.TIMESTAMP, new ConstructJodaTimestamp());
     }
 

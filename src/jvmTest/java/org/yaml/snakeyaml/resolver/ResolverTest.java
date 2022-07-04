@@ -112,6 +112,7 @@ public class ResolverTest extends TestCase {
 
     class MyConstructor extends Constructor {
         public MyConstructor() {
+            super();
             this.yamlConstructors.put(new Tag(Tag.PREFIX + "Phone"), new ConstructPhone());
         }
 

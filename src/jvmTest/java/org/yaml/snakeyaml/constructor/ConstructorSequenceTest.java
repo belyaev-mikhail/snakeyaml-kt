@@ -77,6 +77,10 @@ public class ConstructorSequenceTest extends TestCase {
     }
 
     class CustomConstructor extends Constructor {
+        CustomConstructor() {
+            super();
+        }
+
         @Override
         protected List<Object> createDefaultList(int initSize) {
             return new ArrayList<Object>(initSize);

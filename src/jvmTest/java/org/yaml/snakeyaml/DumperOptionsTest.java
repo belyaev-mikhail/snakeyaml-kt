@@ -53,7 +53,6 @@ public class DumperOptionsTest extends TestCase {
             options.setDefaultScalarStyle(null);
             fail("Null must not be accepted.");
         } catch (NullPointerException e) {
-            assertEquals("Use ScalarStyle enum.", e.getMessage());
         }
     }
 
@@ -86,7 +85,6 @@ public class DumperOptionsTest extends TestCase {
             options.setDefaultFlowStyle(null);
             fail("Null must not be accepted.");
         } catch (NullPointerException e) {
-            assertEquals("Use FlowStyle enum.", e.getMessage());
         }
     }
 
@@ -194,7 +192,6 @@ public class DumperOptionsTest extends TestCase {
             options.setLineBreak(null);
             fail("Null must not be accepted.");
         } catch (NullPointerException e) {
-            assertEquals("Specify line break.", e.getMessage());
         }
     }
 

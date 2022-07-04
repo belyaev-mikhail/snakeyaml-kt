@@ -63,7 +63,7 @@ public class SerializerWithCommentEnabledTest {
         private List<Event> eventList = new ArrayList<>();
 
         @Override
-        public void emit(Event event) throws IOException {
+        public void emit(Event event) {
             eventList.add(event);
         }
 

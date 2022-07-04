@@ -77,6 +77,7 @@ public class RepresentTest extends TestCase {
 
     class MyConstructor extends Constructor {
         public MyConstructor() {
+            super();
             this.yamlConstructors.put(new Tag(Tag.PREFIX + "Dice"), new ConstructDice());
         }
 

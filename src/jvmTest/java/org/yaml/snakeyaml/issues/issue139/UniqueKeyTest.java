@@ -42,6 +42,10 @@ public class UniqueKeyTest extends TestCase {
 
     private class UniqueKeyConstructor extends Constructor {
 
+        private UniqueKeyConstructor() {
+            super();
+        }
+
         @Override
         protected void constructMapping2ndStep(MappingNode node, Map<Object, Object> mapping) {
             List<NodeTuple> nodeValue = (List<NodeTuple>) node.getValue();
